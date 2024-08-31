@@ -7,6 +7,9 @@ settings:
 environments:
 #  dev:
 #    match_branch: refs/heads/main
+#    stages:
+#    - deploy
+#    - local-test
 #  sit:
 #    match_branch: refs/tags/.*
 #  prd:
