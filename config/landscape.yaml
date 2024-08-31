@@ -3,6 +3,7 @@ settings:
 #  cosmos_name:
 #   realm_name:
 #   foundation_name:
+#   application_name:
 environments:
 #  dev:
 #    match_branch: refs/heads/main
