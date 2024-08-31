@@ -23,14 +23,18 @@ plan: init
 apply: init
 	@. .venv/bin/activate; \
 	if [ -z "$(env_name)" ]; then \
-	    echo "Environment name not specified. Usage: make plan env_name=<env_name>"; \
+	    echo "Environment name not specified. Usage: make apply env_name=<env_name>"; \
 	else \
 	    python -m xia_framework.application apply -e $(env_name); \
     fi
 
 destroy: init
 	@. .venv/bin/activate; \
-	python -m xia_framework.application destroy
+	if [ -z "$(env_name)" ]; then \
+	    echo "Environment name not specified. Usage: make destroy env_name=<env_name>"; \
+	else \
+	    python -m xia_framework.application destroy -e $(env_name); \
+	fi
 
 init-module: init
 	@. .venv/bin/activate; \
