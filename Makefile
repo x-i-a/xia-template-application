@@ -36,6 +36,10 @@ destroy: init
 	    python -m xia_framework.application destroy -e $(env_name); \
 	fi
 
+init-config: init
+	@. .venv/bin/activate; \
+	python -m xia_framework.application init-config
+
 init-module: init
 	@. .venv/bin/activate; \
 	if [ -z "$(module_uri)" ] ; then \
