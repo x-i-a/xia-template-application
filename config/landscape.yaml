@@ -5,19 +5,19 @@ settings:
 #  foundation_name:
 #  application_name:
 environments:
-#  dev:
-#    match_branch: refs/heads/main
-#    stages:
-#    - deploy
-#    - local-test
-#  sit:
-#    match_branch: refs/tags/.*
-#    stages:
-#    - deploy
-#    - remote-test
-#  prd:
-#    match_branch: refs/tags/.*
-#    match_event: release
-#    stages:
-#    - deploy
-#    - publish
+  dev:
+    match_branch: refs/heads/main
+    stages:
+    - local-test
+    - deploy
+  sit:
+    match_branch: refs/tags/.*
+    stages:
+    - deploy
+    - remote-test
+  prd:
+    match_branch: refs/tags/.*
+    match_event: release
+    stages:
+    - deploy
+    - publish
