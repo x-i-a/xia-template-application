@@ -1,4 +1,4 @@
-.PHONY: all init plan apply destroy init-module
+.PHONY: all init plan apply destroy unlock init-module
 
 all:
 	@echo "Specify a command to run"
@@ -34,6 +34,14 @@ destroy: init
 	    echo "Environment name not specified. Usage: make destroy env_name=<env_name>"; \
 	else \
 	    python -m xia_framework.application destroy -e $(env_name); \
+	fi
+
+unlock: init
+	@. .venv/bin/activate; \
+	if [ -z "$(env_name)" ]; then \
+	    echo "Environment name not specified. Usage: make destroy env_name=<env_name>"; \
+	else \
+	    python -m xia_framework.application unlock -e $(env_name); \
 	fi
 
 init-config: init
